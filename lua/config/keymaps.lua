@@ -2,6 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+local map = LazyVim.safe_keymap_set
+
 vim.keymap.set("i", "<M-BS>", "<C-w>")
 -- TOOD: figure out why cmd backspace is not working
 vim.keymap.set("i", "<D-BS>", "<C-u>")

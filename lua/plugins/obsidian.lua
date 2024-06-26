@@ -39,6 +39,12 @@ return {
         },
       },
     },
+    ui = {
+      checkboxes = {
+        [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+        ["x"] = { char = "", hl_group = "ObsidianDone" },
+      },
+    },
     -- Optional, for templates (see below).
     templates = {
       folder = "templates",
@@ -58,8 +64,9 @@ return {
       -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
       local suffix = ""
       if title ~= nil then
+        return title
         -- If title is given, transform it into valid file name.
-        suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+        -- suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
       else
         -- If title is nil, just add 4 random uppercase letters to the suffix.
         for _ = 1, 4 do
