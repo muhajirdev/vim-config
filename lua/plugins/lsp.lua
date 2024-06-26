@@ -1,6 +1,4 @@
 return {
-
-  -- add pyright to lspconfig
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
@@ -11,6 +9,21 @@ return {
           settings = {
             -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
             workingDirectories = { mode = "auto" },
+          },
+        },
+        lua_ls = {
+          settings = {
+            Lua = {
+              diagnostics = {
+                globals = { "vim" },
+              },
+              workspace = {
+                library = vim.api.nvim_get_runtime_file("", true),
+              },
+              telemetry = {
+                enable = false,
+              },
+            },
           },
         },
       },

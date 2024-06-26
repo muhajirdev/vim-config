@@ -1,6 +1,18 @@
 -- since this is just an example spec, don't actually load anything here and return an empty spec
 if true then
   return {
+
+    {
+      "neovim/nvim-lspconfig",
+      ---@class PluginLspOpts
+      opts = {
+        ---@type lspconfig.options
+        servers = {
+          -- pyright will be automatically installed with mason and loaded with lspconfig
+          pyright = {},
+        },
+      },
+    },
     {
       "mfussenegger/nvim-lint",
       opts = {
