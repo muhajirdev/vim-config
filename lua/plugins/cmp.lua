@@ -13,6 +13,43 @@ return {
       end
 
       local cmp = require("cmp")
+      local compare = require("cmp.config.compare")
+
+      opts.sources = cmp.config.sources({
+        {
+          name = "nvim_lsp",
+          priority = 1000,
+        },
+        {
+          name = "path",
+        },
+        {
+          name = "buffer",
+        },
+        -- {
+        --   name = "snippets",
+        --   priority = 0,
+        -- },
+        {
+          name = "lazydev",
+        },
+      })
+
+      -- opts.sorting = {
+      --   priority_weight = 100,
+      --   comparators = {
+      --     compare.offset,
+      --     compare.exact,
+      --     -- compare.scopes,
+      --     compare.score,
+      --     compare.recently_used,
+      --     compare.locality,
+      --     compare.kind,
+      --     -- compare.sort_text,
+      --     compare.length,
+      --     compare.order,
+      --   },
+      -- }
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         -- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
