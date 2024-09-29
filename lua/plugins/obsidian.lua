@@ -1,7 +1,7 @@
 return {
   "epwalsh/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
-  lazy = true,
+  lazy = false,
   ft = "markdown",
   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
   -- event = {
@@ -22,22 +22,22 @@ return {
         name = "muhajir",
         path = "~/vaults/muhajir",
       },
-      {
-        name = "no-vault",
-        path = function()
-          -- alternatively use the CWD:
-          -- return assert(vim.fn.getcwd())
-          return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
-        end,
-        overrides = {
-          notes_subdir = vim.NIL,
-          new_notes_location = "current_dir",
-          templates = {
-            folder = vim.NIL,
-          },
-          disable_frontmatter = true,
-        },
-      },
+      -- {
+      --   name = "no-vault",
+      --   path = function()
+      --     -- alternatively use the CWD:
+      --     -- return assert(vim.fn.getcwd())
+      --     return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
+      --   end,
+      --   overrides = {
+      --     notes_subdir = vim.NIL,
+      --     new_notes_location = "current_dir",
+      --     templates = {
+      --       folder = vim.NIL,
+      --     },
+      --     disable_frontmatter = true,
+      --   },
+      -- },
     },
     ui = {
       checkboxes = {
